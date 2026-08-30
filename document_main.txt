@@ -1,0 +1,54 @@
+App para salve do obsidian, que rode no terminal:
+Funções:
+	------------------- Visíveis: 
+	1- Ver status
+		1. Limpar tela anterior
+		2. Rodar comando de "status"
+		3. Voltar para a tela inicial, após ENTER do usuário
+	2- Fazer save no GitHub
+		1. Limpar tela anterior 
+		2. Rodar comando "add ."
+		3. Rodar comando de "commit -m {data_atual}"
+		4. Voltar para a tela inicial, após ENTER do usuário
+		-----------------------------------------------------
+		5- Caso haja um erro em qualquer processos, retornar para o usuário imediatamente
+	3- Fazer Atualização do conteúdo
+		1. Limpar tela anterior
+		2. Rodar comando de "pull"
+		3. Voltar para a tela inicial, após ENTER do usuário
+		-----------------------------------------------------
+		4- Caso haja um erro em qualquer processos, retornar para o usuário imediatamente
+		
+	4- Fechar terminal
+	------------------- Invisíveis: 
+	5- Limpar terminal
+	6- Verificar se a atualizações na nuvem que não foram passadas para o arquivo local
+		1- Rodar comando "fetch"
+		2- Roda comando "status"
+		4- Verificar se a um texto de "Your branch is up to date with"
+			- Caso SIM: Retornar um "True" 
+			- Caso NÃO: Retornar um "False"
+		5- Retornar resultado
+	7- Verifica se a atualizações localmente que não foram passadas para a nuvem
+		1- Roda Comando de "status"
+		2- Verificar se a um texto de "git add"
+			- Caso SIM: Retornar um "True" 
+			- Caso NÃO: Retornar um "False"
+		3- Retornar resultado
+Telas:
+	1- Inicial
+		1. Mostrar layout de inicio
+		2. Mostrar opções das funções
+			1- Ver status
+			2- Fazer salvamento no GitHub
+			3- Fazer Atualização do conteúdo local
+			4- Fechar terminal
+		---------------------------------
+		3. Mostrar possíveis avisos
+			1- Casos haja uma atualização que não foi passada para a pasta local
+			2- Casos haja alguma alteração e não foi passada para a nuvem
+			3- Casos os dois avisos forem ativados, mostrar aviso de possível conflito
+	2- Para cada função
+Bibliotecas:
+	1- Para pegar data atual: datetime 
+	2- Para rodar no terminal: subprocess
