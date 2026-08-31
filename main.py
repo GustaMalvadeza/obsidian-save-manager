@@ -41,8 +41,12 @@ def git_pull():
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
-def verify_update_cloud():
+def pull_cloud():
+    print("Puxando arquivos da nuvem, aguarde alguns instantes!")
     subprocess.run(["git", "fetch"], capture_output= True)
+    clear()
+
+def verify_update_cloud():
     response= subprocess.run(["git", "status"], capture_output= True, text= True)
     if "Your branch is up to date with" in response.stdout:
         return False
@@ -57,6 +61,7 @@ def verify_update_local():
         return False
 
 if __name__ == "__main__":
+    pull_cloud()
     while(True):
         clear()
         print("-"*35)
